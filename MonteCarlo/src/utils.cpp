@@ -4,7 +4,7 @@ double MonteCarlo(uint64_t numSamples, double(*probabilityDensityFunction)(doubl
 {
     // Get the expected value of 1/n (summation of (f(x)/p(x)))
     double sum = 0.0;
-    double one_over_n = 1.0 / numSamples;
+    double oneOverN = 1.0 / numSamples;
 
     for (int i = 0; i < numSamples; i++)
     {
@@ -12,5 +12,5 @@ double MonteCarlo(uint64_t numSamples, double(*probabilityDensityFunction)(doubl
         sum += functionToIntegrate(rand) / probabilityDensityFunction(rand);
     }
 
-    return one_over_n * sum;
+    return oneOverN * sum;
 }

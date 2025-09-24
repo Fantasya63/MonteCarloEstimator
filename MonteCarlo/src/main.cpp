@@ -12,10 +12,12 @@ double SamplingProbability(double x)
     return 0.5;
 }
 
+
 double SemiCirle(double x)
 {
     return sqrt(1.0 - (x * x));
 }
+
 
 static std::mt19937_64 randomGenerator{(uint32_t) std::chrono::high_resolution_clock::now().time_since_epoch().count()};
 double GetRandomSample()
@@ -31,6 +33,5 @@ int main ()
     {
         std::cout << "Num of Samples: " << std::setfill('-') << std::setw(10) << i 
             << " - PI is approximately : " << MonteCarlo(i, SamplingProbability, SemiCirle, GetRandomSample) * 2.0 << "\n";
-    }
-    
+    }   
 }
